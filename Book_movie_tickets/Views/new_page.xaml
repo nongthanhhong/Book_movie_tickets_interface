@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Book_movie_tickets.new_page"
+             Title="Tin tức">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Margin="10" Text="Tin tức" TextColor="Black" FontSize="Large"  FontAttributes="Bold" 
+                                   VerticalTextAlignment="Center"></Label>
+                <BoxView HeightRequest="4"
+                         HorizontalOptions="Fill"
+                         Color="Black"/>
+                <CollectionView x:Name="Coll_news" Margin="15"
+                                SelectionMode="Single" 
+                                EmptyView="No items to display"
+                            SelectionChanged="Coll_news_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="5*" />
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding newsImg}" Grid.Row="0" Grid.Column="0" />
+
+                                <Label Text="{Binding newsTitle}" Grid.Row="1" Grid.Column="0"
+                                   FontAttributes="Bold" FontSize="Large" VerticalOptions="Center" />
+                                <Label Text="{Binding newsContent}" Grid.Row="2" Grid.Column="0" MaxLines="2"
+                                   FontAttributes="None" FontSize="12"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

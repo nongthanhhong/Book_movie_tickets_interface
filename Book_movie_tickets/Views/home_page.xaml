@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Book_movie_tickets.home_page"
+             Title="CINEMA"
+             >
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto">
+
+            <Frame Grid.Row="0" BackgroundColor="White" CornerRadius="0" Padding="2" >
+
+                <Label Grid.Row="0" Text="Movie" TextColor="White" FontSize="Title" HeightRequest="50" WidthRequest="500" 
+                                           VerticalOptions="Center" HorizontalOptions="Center" 
+                                           VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                           BackgroundColor="purple"></Label>
+            </Frame>
+
+            <StackLayout Grid.Row="1" HeightRequest="550">
+                <CollectionView x:Name="collection_movie" 
+                                        ItemsLayout="HorizontalList"
+                                        SelectionMode="Single" 
+                                        SelectionChanged="collection_movie_SelectionChanged"
+                                        BackgroundColor="purple"
+                                        EmptyView="No items to display"
+                                        >
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate >
+                            <Grid RowDefinitions="Auto, Auto, *">
+                                <StackLayout Grid.Row="0">
+                                    <Image Source="{Binding Poster}" 
+                                                           WidthRequest="300" HeightRequest="450"
+                                                           HorizontalOptions="Fill" VerticalOptions="Fill" 
+                                                           Margin="5">
+                                    </Image>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="{Binding Title}" FontSize="Large"
+                                                               HorizontalOptions="Center" VerticalOptions="Start"
+                                                               TextColor="White"
+                                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                                    </Label>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="2">
+                                    <Label Text="{Binding Rating, StringFormat='Đánh giá: {0:N}'}" FontSize="Large"
+                                                               HorizontalOptions="Center" VerticalOptions="Start"
+                                                               TextColor="White"
+                                                               VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+
+                                    </Label>
+                                </StackLayout>
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+
+            <Frame Grid.Row="2" BackgroundColor="White" CornerRadius="0" Padding="2">
+                <Label Grid.Row="2" Text="Have fun and enjoy your movies" TextColor="White" FontSize="Title" HeightRequest="40" WidthRequest="500" 
+                                   VerticalOptions="Center" HorizontalOptions="Center" 
+                                   VerticalTextAlignment="End" HorizontalTextAlignment="Center"
+                                   BackgroundColor="purple"></Label>
+            </Frame>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

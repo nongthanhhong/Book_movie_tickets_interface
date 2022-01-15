@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Book_movie_tickets.DK"
+             Title="Đăng ký">
+
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="20">
+            <Label Text="Đăng ký tài khoản thành viên" FontSize="17" HorizontalTextAlignment="Center"/>
+            <Frame BorderColor="Black" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Entry x:Name="fullname" Placeholder="Họ và tên" Text="{Binding User.UserFullName}" 
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           Keyboard="Text"  
+                           TextColor="Black"/>
+                    <Entry x:Name="phonenumber"  Placeholder="Số điện thoại" Text="{Binding User.UserPhone}"   
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           Keyboard="Telephone"
+                           TextColor="Black"/>
+                    <Entry x:Name="email" Placeholder="Email"  Text="{Binding User.UserMail}"
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           Keyboard="Email"
+                           TextColor="Black"/>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Thông tin đăng nhập" FontSize="17" HorizontalTextAlignment="Center"/>
+            <Frame BorderColor="Black" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Entry x:Name="username" Placeholder="Tài khoản" Text="{Binding User.UserName}"  
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           Keyboard="Text"  
+                           TextColor="Black"/>
+                    <Entry x:Name="password" Placeholder="Nhập mật khẩu"  Text="{Binding User.UserPassword}"  
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           IsPassword="True"
+                           TextColor="Black"/>
+                    <Entry x:Name="repassword" Placeholder="Nhập lại mật khẩu"   
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           IsPassword="True"
+                           TextColor="Black"/>
+                </StackLayout>
+            </Frame>
+            <Button Clicked="btnSignup_Clicked" x:Name="btnSignup" Text="Đăng ký" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="Purple" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

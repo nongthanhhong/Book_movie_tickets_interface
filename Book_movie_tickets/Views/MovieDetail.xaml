@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="Book_movie_tickets.Views.MovieDetail"
+                 Title="Phim">
+
+        <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                    <Frame
+                        Padding="4"
+                       CornerRadius="10"
+                        Margin="15"
+                       BorderColor="Green">
+                        <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding Poster}"  Grid.Row="0" Grid.RowSpan="3" Grid.Column="0"></Image>
+                        <Label Text="{Binding Title}" FontAttributes="Bold"  TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="End"></Label>
+                        <Label Text="{Binding Length, StringFormat='Thời lượng: {0:N}'}" TextColor="Black" VerticalTextAlignment="Center" FontSize="Medium" Grid.Row="1" Grid.Column="1"></Label>
+                        <Label Text="{Binding Genre, StringFormat='Thể loại: {0:N}'}" TextColor="Black" VerticalTextAlignment="Start" FontSize="Medium" Grid.Row="2" Grid.Column="1"></Label>
+                        <Button Text="Mua vé" Clicked="Button_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                                BackgroundColor="Red" TextColor="White"></Button>
+                    </Grid>
+                    </Frame>
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Director, StringFormat='Đạo diễn: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="0" Grid.Column="0"></Label>
+                        <Label Text="{Binding Rating, StringFormat='Rating: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="1" Grid.Column="0"></Label>
+                    <Label Text="{Binding Showday, StringFormat='Ngày công chiếu: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="2" Grid.Column="0"></Label>
+                    <Label Text="{Binding Description, StringFormat='Giới thiệu: {0:N}'}" TextColor="Black" FontSize="Medium" Grid.Row="3" Grid.Column="0"></Label>
+                        
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>
+    

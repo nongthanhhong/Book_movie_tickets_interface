@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:Book_movie_tickets="clr-namespace:Book_movie_tickets"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="Book_movie_tickets.Main_Tabbed"
+            Title="CINEMA">
+  <!--Pages can be added as references or inline-->
+    <Book_movie_tickets:home_page Title="Trang Chủ" IconImageSource="home.png"></Book_movie_tickets:home_page>
+    <Book_movie_tickets:buy_ticket Title="Mua Vé" IconImageSource="ticket.png"></Book_movie_tickets:buy_ticket>
+    <Book_movie_tickets:new_page Title="Tin tức" IconImageSource="tintuc.png"></Book_movie_tickets:new_page>
+    <Book_movie_tickets:voucher_page Title="Ưu đãi" IconImageSource="uudai.png"></Book_movie_tickets:voucher_page>
+</TabbedPage>

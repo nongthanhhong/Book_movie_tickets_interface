@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Book_movie_tickets.user_page">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnSpacing="10" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height=" 150"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="THÀNH VIÊN" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="20"/>
+                <Image Source="cai_dat.png" HeightRequest="30" WidthRequest="30"
+                       Grid.Column="1" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center"/>
+                <BoxView Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="Black"
+                         HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
+
+                <Image Source="user.png" HeightRequest="100" WidthRequest="100"
+                       Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="End"/>
+
+                <Label Text="Đăng ký thành viên" FontSize="17" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"
+                       Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
+                <Label Text="Nhận ngay ưu đãi" FontSize="17" HorizontalTextAlignment="Center" VerticalTextAlignment="End"
+                       Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"/>
+                <Button x:Name="DK" Text="Đăng ký" BackgroundColor="Purple" TextColor="White" WidthRequest="120"
+                        Grid.Column="0" Grid.Row="3" HorizontalOptions="End" VerticalOptions="Center"
+                        Clicked="DK_Clicked"/>
+                <Button x:Name="DN" Text="Đăng nhập" BorderColor="Purple" BorderWidth="1.5" BackgroundColor="White" WidthRequest="120"
+                        Grid.Column="1" Grid.Row="3" HorizontalOptions="Start" VerticalOptions="Center"
+                        Clicked="DN_Clicked"/>
+
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

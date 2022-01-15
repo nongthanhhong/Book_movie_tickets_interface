@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Book_movie_tickets.Views.SetDayAndSeat"
+             Title="Nhập thông tin vé">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="Auto, Auto, *" Padding="10" RowSpacing="10">
+                <StackLayout>
+                    <Frame  Padding="4"
+                                       CornerRadius="10"
+                                    Margin="5"
+                                       BorderColor="Yellow"
+                                    BackgroundColor="LightBlue"
+                                    >
+                        <Grid Margin="3" HeightRequest="200">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.5*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Image Source="{Binding Poster}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" HorizontalOptions="FillAndExpand"></Image>
+                            <Label Text="{Binding Title}" VerticalTextAlignment="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"></Label>
+                            <Label Text="{Binding Genre}" VerticalTextAlignment="Start" TextColor="Black" FontSize="Medium" Grid.Row="1" Grid.Column="1"></Label>
+                            <Label Text="{Binding Price, StringFormat='{0:N} VNĐ'}" TextColor="Black" FontSize="Subtitle" Grid.Row="2" Grid.Column="1"></Label>
+
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="1" Spacing="30">
+                    <StackLayout Orientation="Vertical" Spacing="30">
+                        <Label Text="Chọn ngày xem" FontSize="20" VerticalOptions="Center"/>
+                        <DatePicker x:Name="date_picker" MinimumDate="01/01/2022" 
+                                    MaximumDate="12/31/2022" 
+                                    Date="01/01/2022"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="30">
+                        
+                        <Label Text="Nhập các số ghế muốn mua" FontSize="20" VerticalOptions="Center"/>
+                        <Entry x:Name="Seats" Placeholder="Nhập các ghế cách nhau bằng 1 dấu cách!"
+                               ClearButtonVisibility="WhileEditing"
+                               VerticalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="2" Spacing="30">
+                    <Button Text="Tiếp theo" Clicked="Button_Clicked" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

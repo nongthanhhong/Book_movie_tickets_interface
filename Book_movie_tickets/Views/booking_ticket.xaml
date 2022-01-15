@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="Book_movie_tickets.Views.booking_ticket"
+             Title="Xác nhận vé">
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, *" Padding="30" RowSpacing="30">
+            <StackLayout Orientation="Horizontal" Margin="0,20" VerticalOptions="Start" Spacing="20">
+                <Image Source="{Binding Poster}" Aspect="AspectFill" HeightRequest="140" WidthRequest="90" HorizontalOptions="Start"></Image>
+
+                <StackLayout>
+                    <Label Text="{Binding Title}" FontSize="20"/>
+                    <StackLayout Orientation="Vertical" Spacing="15">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="Clock_mini.png" HeightRequest="15" WidthRequest="15"/>
+                            <Label Text="{Binding Showtime}" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding Genre}" FontSize="15" VerticalOptions="Start"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            
+            <BoxView BackgroundColor="Black" Opacity="0.2" HeightRequest="1" VerticalOptions="End"/>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="1" Spacing="30">
+                <Path Stroke="#00b7fc" Aspect="Fill" StrokeThickness="5" HeightRequest="30"
+                      Data="M0, 0S74.587-33.916, 148.078-33.916, 293.962, 0, 293.962, 0"/>
+
+                <skia:SKCanvasView x:Name="canvasView" HeightRequest="250" WidthRequest="350" HorizontalOptions="Center"
+                                   PaintSurface="canvasView_PaintSurface"/>
+
+                <BoxView BackgroundColor="Black" Opacity="0.2" HeightRequest="1" VerticalOptions="End"/>
+
+                <StackLayout Orientation="Horizontal" Spacing="30" HorizontalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+                        <Rectangle Stroke="#353551" StrokeThickness="1" HeightRequest="15" WidthRequest="15" VerticalOptions="Center"/>
+                        <Label Text="Còn trống" FontSize="14" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Rectangle Fill="#353551" HeightRequest="15" WidthRequest="15" VerticalOptions="Center"/>
+                        <Label Text="Đã được đặt" FontSize="14" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Rectangle Fill="#9747ff" HeightRequest="15" WidthRequest="15" VerticalOptions="Center"/>
+                        <Label Text="Ghế của bạn" FontSize="14" VerticalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <Button Grid.Row="2" Text="Đặt vé" TextColor="White" WidthRequest="220" HeightRequest="50" HorizontalOptions="Center"
+                    VerticalOptions="End" Clicked="Button_Clicked"
+                    CornerRadius="20" BackgroundColor="#9747ff" />
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

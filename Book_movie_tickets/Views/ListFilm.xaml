@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Book_movie_tickets.Views.ListFilm"
+             Title="{Binding ten_rap}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <CollectionView x:Name="Coll_film" Margin="15"
+                                SelectionMode="Single" 
+                                EmptyView="No items to display"
+                            SelectionChanged="Coll_film_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame  Padding="4"
+                                       CornerRadius="10"
+                                    Margin="25"
+                                       BorderColor="Yellow"
+                                    BackgroundColor="LightBlue"
+                                    >
+                                <Grid Margin="3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1.5*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <Image Source="{Binding Poster}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" HorizontalOptions="FillAndExpand"></Image>
+                                    <Label Text="{Binding Title}" VerticalTextAlignment="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"></Label>
+                                    <Label Text="{Binding Genre}" VerticalTextAlignment="Start" TextColor="Black" FontSize="Medium" Grid.Row="1" Grid.Column="1"></Label>
+                                    <Label Text="{Binding Price, StringFormat='{0:N} VNĐ'}" TextColor="Black" FontSize="Subtitle" Grid.Row="2" Grid.Column="1"></Label>
+                                    
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

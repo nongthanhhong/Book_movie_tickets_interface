@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="Book_movie_tickets.buy_ticket">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Margin="10" Text="Mua Vé" TextColor="Black" FontSize="Large"  FontAttributes="Bold" 
+                                   VerticalTextAlignment="Center"></Label>
+                <BoxView HeightRequest="4"
+                         HorizontalOptions="Fill"
+                         Color="Black"/>
+                
+                <CollectionView x:Name="Coll_rapchieu" Margin="15"
+                                SelectionMode="Single" 
+                                EmptyView="No items to display"
+                            SelectionChanged="Coll_rapchieu_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame  Padding="4"
+                                       CornerRadius="10"
+                                    Margin="25"
+                                       BorderColor="Yellow"
+                                    BackgroundColor="LightBlue"
+                                    >
+                                <Grid Margin="3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="1.5*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <Image Source="{Binding theaterImg}" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" HorizontalOptions="FillAndExpand"></Image>
+                                    <Label Text="{Binding theaterName}" VerticalTextAlignment="End" TextColor="Black" FontSize="Medium" Grid.Row="0" Grid.Column="1"></Label>
+                                    <Label Text="{Binding theaterAddr}" TextColor="Black" FontSize="Subtitle" Grid.Row="1" Grid.Column="1"></Label>
+                                    <Label Text="{Binding theaterPhone}" VerticalTextAlignment="Start" TextColor="Black" FontSize="Medium" Grid.Row="2" Grid.Column="1"></Label>
+
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

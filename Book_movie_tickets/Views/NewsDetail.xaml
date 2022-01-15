@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Book_movie_tickets.Views.NewsDetail"
+             Title="{Binding newsTitle}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame
+                        Padding="4"
+                       CornerRadius="10"
+                        Margin="15"
+                       BorderColor="Green">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition Height="100" ></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                           
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding newsImg}"  Grid.Row="0" Grid.Column="0" WidthRequest="300" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                        <Label Text="{Binding newsTitle}" FontAttributes="Bold"  TextColor="Black" FontSize="Large" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" ></Label>
+                        <Label Text="{Binding newsAuthor, StringFormat='Theo {0:N}'}" TextColor="Black"  FontSize="Medium" Grid.Row="2" Grid.Column="0"></Label>
+                        <Label Text="{Binding newsContent}" TextColor="Black"  FontSize="Medium" Grid.Row="3" Grid.Column="0"></Label>
+                    </Grid>
+                </Frame>
+ 
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

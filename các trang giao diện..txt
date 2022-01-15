@@ -1,0 +1,6 @@
+home_page: trang chủ
+buy_ticket: trang danh sách rạp
+ListFilm: danh sách phim đang có
+MovieDetail: Chi tiết phim
+SetDayAndSeat: Nhập ngày và ghế muốn mua
+Booking_ticket: xác nhận và đặt vé
