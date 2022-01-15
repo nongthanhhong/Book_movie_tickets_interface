@@ -1,4 +1,5 @@
 # IE307.M11 - Công nghệ lập trình đa nền tảng cho ứng dụng di động
+GVHD: Ths Võ Ngọc Tân
 # Member:
 | STT | Họ và Tên | MSSV | Email | Git |
 |:-----:|:-----------:|:------:|:-------:|:-----:|
